@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace ControlCalidad.Dominio.Entidades
 {
-    public class InspeccionOrdenProduccion
+    public class InspeccionOrdenProduccion : EntityBase
     {
-        public int Id { get; set; }
         public int CantidadPrimera { get; set; }
         public DateTime Fecha { get; set; }
         public DateTime Hora { get; set; }

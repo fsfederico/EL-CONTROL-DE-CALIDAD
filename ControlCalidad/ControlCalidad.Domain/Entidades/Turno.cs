@@ -2,9 +2,8 @@
 
 namespace ControlCalidad.Dominio.Entidades
 {
-    public class Turno
+    public class Turno : EntityBase
     {
-        public int Id { get; set; }
         public TimeSpan Inicio { get; set; }
         public TimeSpan Fin { get; set; }
     }

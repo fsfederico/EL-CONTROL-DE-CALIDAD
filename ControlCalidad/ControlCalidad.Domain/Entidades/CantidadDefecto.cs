@@ -1,8 +1,7 @@
 ﻿namespace ControlCalidad.Dominio.Entidades
 {
-    public class CantidadDefecto
+    public class CantidadDefecto : EntityBase
     {
-        public int Id { get; set; }
         public int CantidadIzquierdo { get; set; }
         public int CantidadDerecho { get; set; }
 

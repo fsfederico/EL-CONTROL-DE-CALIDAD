@@ -2,9 +2,8 @@
 
 namespace ControlCalidad.Dominio.Entidades
 {
-    public class HermanadoOrdenProduccion
+    public class HermanadoOrdenProduccion : EntityBase
     {
-        public int Id { get; set; }
         public int CantidadPrimera { get; set; }
         public int CantidadSegunda { get; set; }
         public DateTime Fecha { get; set; }

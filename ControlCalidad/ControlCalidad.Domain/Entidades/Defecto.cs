@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace ControlCalidad.Dominio.Entidades
 {
-    public class Defecto
+    public class Defecto : EntityBase
     {
-        public int Id { get; set; }
         public string DescripcionDefecto { get; set; }
         public int NumeroDefecto { get; set; }
         public TipoDefecto TipoDefecto { get; set; }
