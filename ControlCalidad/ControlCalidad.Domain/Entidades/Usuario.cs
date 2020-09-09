@@ -8,6 +8,7 @@ namespace ControlCalidad.Dominio.Entidades
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Email { get; set; }
+        public string Documento { get; set; }
         public Rol Rol { get; set; }
 
         public virtual List<OrdenProduccion> OrdenesProduccion { get; set; }
