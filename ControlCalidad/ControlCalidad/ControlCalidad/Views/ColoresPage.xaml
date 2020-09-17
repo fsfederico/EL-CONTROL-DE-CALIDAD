@@ -12,6 +12,16 @@
             </Grid.RowDefinitions>
             <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding Colores}"
                           SeparatorColor="Transparent" SeparatorVisibility="None" Margin="10,10,0,0">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" Text="Descripcion" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" ></Label>
+                    </Grid>
+                </ListView.Header>
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
