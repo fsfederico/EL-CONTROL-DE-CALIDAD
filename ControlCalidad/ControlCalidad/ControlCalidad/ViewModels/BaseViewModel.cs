@@ -1,12 +1,10 @@
-﻿using System;
+﻿using ControlCalidad.Datos;
+using ControlCalidad.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 using Xamarin.Forms;
-
-using ControlCalidad.Models;
-using ControlCalidad.Services;
 
 namespace ControlCalidad.ViewModels
 {
