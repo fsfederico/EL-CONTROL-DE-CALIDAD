@@ -4,6 +4,12 @@ namespace ControlCalidad.Dominio.Entidades
 {
     public class Usuario : EntityBase
     {
+        public Usuario()
+        {
+            OrdenesProduccion = new List<OrdenProduccion>();
+            LineasTrabajo = new List<LineaTrabajo>();
+        }
+
         public string CodigoUsuario { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
