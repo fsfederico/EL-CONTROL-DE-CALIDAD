@@ -1,5 +1,4 @@
-﻿using ControlCalidad.Presentacion;
-using ControlCalidad.Views;
+﻿using ControlCalidad.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -19,17 +18,11 @@ namespace ControlCalidad.ViewModels
 
         private async void OnModelosClicked(object obj)
         {
-            if (Settings.Default.Usuario != null)
-            {
-                await Shell.Current.GoToAsync($"//{nameof(ModelosPage)}");
-            }
+            await Shell.Current.GoToAsync($"//{nameof(ModelosPage)}");
         }
 
         private async void OnColoresClicked(object obj)
         {
-            if (Settings.Default.Usuario != null)
-            {
-            }
             await Shell.Current.GoToAsync($"//{nameof(ColoresPage)}");
         }
 

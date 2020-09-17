@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlCalidad.Views.ModelosPage"
+             x:Name="GestionModelos"
+             Title="Gestión de Modelos">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource MainBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding Modelos}"
+                          SeparatorColor="Transparent" SeparatorVisibility="None" Margin="10,10,0,0">
+                <ListView.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1" Text="Denominación" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" ></Label>
+                            <Label Grid.Column="2" Text="SKU" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" ></Label>
+                            <Label Grid.Column="3" Text="Objetivo" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" ></Label> 
+                        </Grid>  
+                </ListView.Header> 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="{Binding Id, Mode=TwoWay}" VerticalTextAlignment="Center"/>
+                                    <Entry Grid.Column="1" FontAttributes="Bold" FontSize="Medium" Text="{Binding Denomimacion, Mode=TwoWay}" VerticalTextAlignment="Center" IsEnabled="False" AutomationId="entryDen"/>
+                                    <Entry Grid.Column="2" FontAttributes="Bold" FontSize="Medium" Text="{Binding SKU, Mode=TwoWay}" VerticalTextAlignment="Center" IsEnabled="False" AutomationId="entrySKU"/>
+                                    <Entry Grid.Column="3" FontAttributes="Bold" FontSize="Medium" Text="{Binding Objetivo, Mode=TwoWay}" VerticalTextAlignment="Center" IsEnabled="False" AutomationId="entryObj" Keyboard="Numeric"/>
+                                    <Button Grid.Column="4" AutomationId="btnEditar" Text="Editar" CornerRadius="10" Margin="0,5,0,5" HorizontalOptions="CenterAndExpand" Clicked="EnabledEditCommand" IsVisible="True"/>
+                                    <Button Grid.Column="4" AutomationId="btnGuardar" Text="Guardar" BackgroundColor="Green" CornerRadius="10" Margin="0,5,0,5" HorizontalOptions="CenterAndExpand" IsVisible="False" Command="{x:Binding Path=BindingContext.EditCommand, Source={x:Reference GestionModelos}}" CommandParameter="{Binding .}" Clicked="EnabledEditCommand"/>
+                                    <Button Grid.Column="5" AutomationId="btnEliminar" Text="Eliminar" CornerRadius="10" Margin="0,5,0,5" HorizontalOptions="CenterAndExpand" Command="{x:Binding Path=BindingContext.DeleteCommand, Source={x:Reference GestionModelos}}" CommandParameter="{Binding .}"/>
+                                    <Button Grid.Column="5" AutomationId="btnCancelar" Text="Cancelar" BackgroundColor="Red" CornerRadius="10" Margin="0,5,0,5" HorizontalOptions="CenterAndExpand" IsVisible="False" Command="{x:Binding Path=BindingContext.CancelCommand, Source={x:Reference GestionModelos}}" Clicked="EnabledEditCommand"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Grid.Row="1" Margin="10,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="{Binding Modelo.Id}" VerticalTextAlignment="Center"/>
+                <Entry Grid.Column="1" FontAttributes="Bold" FontSize="Medium" Text="{Binding Modelo.Denomimacion}" VerticalTextAlignment="Center"/>
+                <Entry Grid.Column="2" FontAttributes="Bold" FontSize="Medium" Text="{Binding Modelo.SKU, Mode=TwoWay}" VerticalTextAlignment="Center"/>
+                <Entry Grid.Column="3" FontAttributes="Bold" FontSize="Medium" Text="{Binding Modelo.Objetivo, Mode=TwoWay}" VerticalTextAlignment="Center" Keyboard="Numeric"/>
+                <Button Grid.Column="4" Text="Agregar" CornerRadius="10" Margin="0,5,0,5" HorizontalOptions="FillAndExpand" BackgroundColor="ForestGreen" Command="{Binding CreateCommand}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
