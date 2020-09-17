@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using ControlCalidad.ViewModels;
-using ControlCalidad.Views;
+﻿using ControlCalidad.Views;
+using System;
 using Xamarin.Forms;
 
 namespace ControlCalidad

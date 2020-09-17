@@ -1,24 +1,49 @@
-﻿using ControlCalidad.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ControlCalidad.Aplicacion.Servicios;
+using ControlCalidad.Presentacion;
+using ControlCalidad.Views;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace ControlCalidad.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        public Command LoginCommand { get; }
-
-        public LoginViewModel()
+        private IAutenticacionService _autenticacionService { get; set; }
+        public ICommand LoginCommand { get; }
+        private string _documento;
+        public string Documento
         {
-            LoginCommand = new Command(OnLoginClicked);
+            set
+            {
+                _documento = value;
+                CanAuthenticate = !string.IsNullOrEmpty(value);
+                OnPropertyChanged("Documento");
+                ((Command)LoginCommand).ChangeCanExecute();
+            }
+            get
+            {
+                return _documento;
+            }
         }
+
+        public bool CanAuthenticate { get; private set; }
+
+
+        public LoginViewModel(IAutenticacionService autenticacionService)
+        {
+            _autenticacionService = autenticacionService;
+            LoginCommand = new Command(OnLoginClicked, (x) => CanAuthenticate);
+        }
+
 
         private async void OnLoginClicked(object obj)
         {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+            var usuario = _autenticacionService.Autenticar(Documento);
+            if (usuario != null)
+            {
+                Settings.Default.Usuario = usuario;
+                await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+            }
         }
     }
 }

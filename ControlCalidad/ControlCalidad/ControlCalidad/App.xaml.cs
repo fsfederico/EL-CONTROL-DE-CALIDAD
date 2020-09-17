@@ -1,8 +1,5 @@
-﻿using System;
+﻿using ControlCalidad.Aplicacion.Servicios;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using ControlCalidad.Services;
-using ControlCalidad.Views;
 
 namespace ControlCalidad
 {
@@ -13,7 +10,8 @@ namespace ControlCalidad
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<IAutenticacionService, AutenticacionService>();
+            DependencyService.Register<IColoresService, ColoresService>();
             MainPage = new AppShell();
         }
 
