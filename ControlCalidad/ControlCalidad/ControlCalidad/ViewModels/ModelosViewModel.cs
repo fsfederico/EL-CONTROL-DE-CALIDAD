@@ -11,8 +11,8 @@ namespace ControlCalidad.Presentacion.ViewModels
 {
     public class ModelosViewModel : BaseViewModel
     {
-        private IModelosService _modelosService { get; set; }
-        public ModelosViewModel(IModelosService modelosService)
+        private IModeloService _modelosService { get; set; }
+        public ModelosViewModel(IModeloService modelosService)
         {
             _modelosService = modelosService;
             ActualizarListadoModelos();

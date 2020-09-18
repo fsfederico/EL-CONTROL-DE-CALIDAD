@@ -9,7 +9,7 @@ namespace ControlCalidad.Views
     {
         public ModelosPage()
         {
-            var coloresService = DependencyService.Resolve<IModelosService>();
+            var coloresService = DependencyService.Resolve<IModeloService>();
             InitializeComponent();
             BindingContext = new ModelosViewModel(coloresService);
         }

@@ -11,8 +11,8 @@ namespace ControlCalidad
             InitializeComponent();
 
             DependencyService.Register<IAutenticacionService, AutenticacionService>();
-            DependencyService.Register<IColoresService, ColoresService>();
-            DependencyService.Register<IModelosService, ModelosService>();
+            DependencyService.Register<IColorService, ColorService>();
+            DependencyService.Register<IModeloService, ModeloService>();
             MainPage = new AppShell();
         }
 

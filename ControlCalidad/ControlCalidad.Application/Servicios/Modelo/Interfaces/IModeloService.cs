@@ -2,7 +2,7 @@
 
 namespace ControlCalidad.Aplicacion.Servicios
 {
-    public interface IModelosService
+    public interface IModeloService
     {
         void CrearModelo(string denominacion, string SKU, int objetivo);
         void EditarModelo(Modelo modelo);

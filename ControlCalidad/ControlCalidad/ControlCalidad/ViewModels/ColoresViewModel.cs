@@ -11,8 +11,8 @@ namespace ControlCalidad.Presentacion.ViewModels
 {
     public class ColoresViewModel : BaseViewModel
     {
-        private IColoresService _coloresService { get; set; }
-        public ColoresViewModel(IColoresService coloresService)
+        private IColorService _coloresService { get; set; }
+        public ColoresViewModel(IColorService coloresService)
         {
             _coloresService = coloresService;
             ActualizarListadoColores();

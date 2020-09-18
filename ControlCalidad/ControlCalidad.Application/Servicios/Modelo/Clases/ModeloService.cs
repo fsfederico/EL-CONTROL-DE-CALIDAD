@@ -3,7 +3,7 @@ using ControlCalidad.Dominio.Entidades;
 
 namespace ControlCalidad.Aplicacion.Servicios
 {
-    public class ModelosService : IModelosService
+    public class ModeloService : IModeloService
     {
         public void CrearModelo(string denominacion, string sku, int objetivo)
         {

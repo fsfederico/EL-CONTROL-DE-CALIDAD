@@ -2,7 +2,7 @@
 
 namespace ControlCalidad.Aplicacion.Servicios
 {
-    public interface IColoresService
+    public interface IColorService
     {
         void CrearColor(string descripcion);
         void EditarColor(Color color);

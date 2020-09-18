@@ -3,7 +3,7 @@ using ControlCalidad.Dominio.Entidades;
 
 namespace ControlCalidad.Aplicacion.Servicios
 {
-    public class ColoresService : IColoresService
+    public class ColorService : IColorService
     {
         public void CrearColor(string descripcion)
         {
