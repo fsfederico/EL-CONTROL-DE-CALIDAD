@@ -5,7 +5,12 @@ namespace ControlCalidad.Dominio.Entidades
 {
     public class OrdenProduccion : EntityBase
     {
-        public int Numero { get; set; }
+        public OrdenProduccion()
+        {
+            InspeccionesOrdenProduccion = new List<InspeccionOrdenProduccion>();
+        }
+
+        public string Numero { get; set; }
         public EstadoOrdenProduccion EstadoOrdenProduccion { get; set; }
 
         public virtual LineaTrabajo LineaTrabajo { get; set; }

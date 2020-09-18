@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ControlCalidad.Dominio.Entidades
 {
@@ -19,5 +20,6 @@ namespace ControlCalidad.Dominio.Entidades
 
         public virtual List<OrdenProduccion> OrdenesProduccion { get; set; }
         public virtual List<LineaTrabajo> LineasTrabajo { get; set; }
+        public bool EstaAsignado => OrdenesProduccion.Any(op => op.Estado == Enums.Estado.Activo && op.EstadoOrdenProduccion != Enums.EstadoOrdenProduccion.Finalizado);
     }
 }
