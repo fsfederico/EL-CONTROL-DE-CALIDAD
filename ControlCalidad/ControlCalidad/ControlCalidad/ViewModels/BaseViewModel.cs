@@ -1,8 +1,10 @@
 ﻿using ControlCalidad.Presentacion;
+using ControlCalidad.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Xamarin.Forms;
 
 namespace ControlCalidad.ViewModels
 {
@@ -86,6 +88,15 @@ namespace ControlCalidad.ViewModels
             return true;
         }
 
+        protected async void GoHome(Page page)
+        {
+            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+        }
+        protected async void MostrarMensaje(string title, string message, string button)
+        {
+            await Application.Current.MainPage.DisplayAlert(title, message, button);
+            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+        }
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")

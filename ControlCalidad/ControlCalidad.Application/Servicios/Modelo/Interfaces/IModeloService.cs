@@ -2,10 +2,7 @@
 
 namespace ControlCalidad.Aplicacion.Servicios
 {
-    public interface IModeloService
+    public interface IModeloService : IGenericService<Modelo>
     {
-        void CrearModelo(string denominacion, string SKU, int objetivo);
-        void EditarModelo(Modelo modelo);
-        void EliminarModelo(Modelo modelo);
     }
 }

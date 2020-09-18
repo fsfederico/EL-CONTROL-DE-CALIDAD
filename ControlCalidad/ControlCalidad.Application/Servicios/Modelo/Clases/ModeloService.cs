@@ -1,33 +1,43 @@
 ﻿using ControlCalidad.Datos;
 using ControlCalidad.Dominio.Entidades;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ControlCalidad.Aplicacion.Servicios
 {
     public class ModeloService : IModeloService
     {
-        public void CrearModelo(string denominacion, string sku, int objetivo)
+        public void AddOrUpdate(Modelo item)
         {
-            var Modelo = new Modelo
-            {
-                Denomimacion = denominacion,
-                SKU = sku,
-                Objetivo = objetivo,
-                Estado = Dominio.Enums.Estado.Activo
-            };
-
-            MockDataStore.Modelos.AddOrUpdate(Modelo);
+            item.Estado = Dominio.Enums.Estado.Activo;
+            MockDataStore.Modelos.AddOrUpdate(item);
         }
 
-        public void EditarModelo(Modelo Modelo)
+        public IEnumerable<Modelo> GetAll()
         {
-            MockDataStore.Modelos.AddOrUpdate(Modelo);
+            return MockDataStore.Modelos;
         }
 
-        public void EliminarModelo(Modelo Modelo)
+        public IEnumerable<Modelo> GetAllActives()
         {
-            Modelo.Estado = Dominio.Enums.Estado.Eliminado;
-            MockDataStore.Modelos.AddOrUpdate(Modelo);
+            return MockDataStore.Modelos.Where(c => c.Estado == Dominio.Enums.Estado.Activo);
         }
 
+        public Modelo GetById(int id)
+        {
+            return MockDataStore.Modelos.FirstOrDefault(m => m.Id == id);
+        }
+
+        public IEnumerable<Modelo> GetFiltered(Func<Modelo, bool> filter)
+        {
+            return MockDataStore.Modelos.Where(filter);
+        }
+
+        public void Remove(Modelo item)
+        {
+            item.Estado = Dominio.Enums.Estado.Eliminado;
+            MockDataStore.Modelos.AddOrUpdate(item);
+        }
     }
 }

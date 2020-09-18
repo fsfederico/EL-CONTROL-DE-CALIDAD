@@ -1,6 +1,8 @@
-﻿namespace ControlCalidad.Aplicacion.Servicios
+﻿using ControlCalidad.Dominio.Entidades;
+
+namespace ControlCalidad.Aplicacion.Servicios
 {
-    public interface IOrdenProduccionService
+    public interface IOrdenProduccionService : IGenericService<OrdenProduccion>
     {
     }
 }

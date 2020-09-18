@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:ControlCalidad.Presentacion"
+             x:Class="ControlCalidad.Views.IniciarOrdenProduccionPage"
+             x:Name="GestionOP"
+             Title="Iniciar Orden de Producción">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource MainBackground}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <ListView x:Name="listView" 
+                  HasUnevenRows="True" 
+                  ItemsSource="{Binding Lineas}" 
+                  SeparatorColor="Transparent" 
+                  SeparatorVisibility="None" 
+                  Margin="10,10,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="{Binding NumeroLinea, StringFormat='Linea {0}'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                    <Button Grid.Column="1" Text="Seleccionar" BackgroundColor="DarkSlateGray" CornerRadius="10" Margin="0,5,0,5" HorizontalOptions="CenterAndExpand" Command="{x:Binding Path=BindingContext.SelectCommand, Source={x:Reference GestionOP}}" CommandParameter="{Binding .}"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ScrollView Grid.Column="1" Margin="0,10,10,10">
+                <StackLayout>
+                    <Label FontSize="25" Text="{Binding LineaTrabajo.NumeroLinea, StringFormat='Linea {0}'}" HorizontalTextAlignment="Center"/>
+                    <Picker Title="- Seleccionar Modelo -" TitleColor="Wheat" ItemsSource="{Binding Modelos}" ItemDisplayBinding="{Binding Denomimacion}" SelectedItem="{Binding Modelo}"/>
+                    <Label FontSize="15" FontAttributes="Italic" Text="{Binding Modelo.Objetivo, StringFormat='El objetivo es de {0} por hora'}">
+                        <Label.Resources>
+                            <ResourceDictionary>
+                                <converter:IsNotNullConverter x:Key="IsNotNullConverter" />
+                            </ResourceDictionary>
+                        </Label.Resources>
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Modelo, Converter={StaticResource IsNotNullConverter}}" Value="True">
+                                <Setter Property="IsVisible" Value="True"/>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                    <Picker Title="- Seleccionar Color -" TitleColor="Wheat" ItemsSource="{Binding Colores}" ItemDisplayBinding="{Binding Descripcion}" SelectedItem="{Binding Color}"/>
+                    <Entry Placeholder="Número de orden" Text="{x:Binding Path=BindingContext.OrdenProduccion.Numero}"/>
+                    <Button Text="Iniciar" Command="{Binding IniciarCommand}" HorizontalOptions="CenterAndExpand"></Button>
+                    <StackLayout.Resources>
+                        <ResourceDictionary>
+                            <converter:IsNotNullConverter x:Key="IsNotNullConverter" />
+                        </ResourceDictionary>
+                    </StackLayout.Resources>
+                    <StackLayout.Triggers>
+                        <DataTrigger TargetType="StackLayout" Binding="{Binding LineaTrabajo, Converter={StaticResource IsNotNullConverter}}" Value="False">
+                            <Setter Property="IsVisible" Value="False"/>
+                        </DataTrigger>
+                    </StackLayout.Triggers>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

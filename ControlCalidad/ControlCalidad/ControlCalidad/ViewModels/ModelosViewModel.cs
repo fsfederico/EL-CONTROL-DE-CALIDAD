@@ -65,14 +65,14 @@ namespace ControlCalidad.Presentacion.ViewModels
 
         private void OnCreateClicked(object obj)
         {
-            _modelosService.CrearModelo(Modelo.Denomimacion, Modelo.SKU, Modelo.Objetivo);
+            _modelosService.AddOrUpdate(Modelo);
             ActualizarListadoModelos();
             NuevoModelo();
         }
 
         private void OnEditClicked(object obj)
         {
-            _modelosService.EditarModelo(obj as Modelo);
+            _modelosService.AddOrUpdate(obj as Modelo);
             ActualizarListadoModelos();
         }
 
@@ -85,9 +85,9 @@ namespace ControlCalidad.Presentacion.ViewModels
         #region Delete
         public ICommand DeleteCommand { get; }
 
-        private async void OnDeleteCommand(object obj)
+        private void OnDeleteCommand(object obj)
         {
-            _modelosService.EliminarModelo(obj as Modelo);
+            _modelosService.Remove(obj as Modelo);
             ActualizarListadoModelos();
         }
         #endregion

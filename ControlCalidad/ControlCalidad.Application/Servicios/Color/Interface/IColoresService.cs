@@ -2,10 +2,7 @@
 
 namespace ControlCalidad.Aplicacion.Servicios
 {
-    public interface IColorService
+    public interface IColorService : IGenericService<Color>
     {
-        void CrearColor(string descripcion);
-        void EditarColor(Color color);
-        void EliminarColor(Color color);
     }
 }

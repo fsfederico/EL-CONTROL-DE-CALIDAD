@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:ControlCalidad.Views"
        Title="ControlCalidad"
@@ -83,6 +83,7 @@
         <ShellContent Title="Home" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
         <ShellContent Route="ModelosPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:ModelosPage}" />
         <ShellContent Route="ColoresPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:ColoresPage}" />
+        <ShellContent Route="IniciarOrdenProduccionPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:IniciarOrdenProduccionPage}" />
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->

@@ -65,14 +65,14 @@ namespace ControlCalidad.Presentacion.ViewModels
 
         private void OnCreateClicked(object obj)
         {
-            _coloresService.CrearColor(Color.Descripcion);
+            _coloresService.AddOrUpdate(Color);
             ActualizarListadoColores();
             NuevoColor();
         }
 
         private void OnEditClicked(object obj)
         {
-            _coloresService.EditarColor(obj as Color);
+            _coloresService.AddOrUpdate(obj as Color);
             ActualizarListadoColores();
         }
 
@@ -85,9 +85,9 @@ namespace ControlCalidad.Presentacion.ViewModels
         #region Delete
         public ICommand DeleteCommand { get; }
 
-        private async void OnDeleteCommand(object obj)
+        private void OnDeleteCommand(object obj)
         {
-            _coloresService.EliminarColor(obj as Color);
+            _coloresService.Remove(obj as Color);
             ActualizarListadoColores();
         }
         #endregion

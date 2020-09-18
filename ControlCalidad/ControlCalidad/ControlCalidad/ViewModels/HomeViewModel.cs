@@ -8,11 +8,13 @@ namespace ControlCalidad.ViewModels
     {
         public ICommand ModelosCommand { get; }
         public ICommand ColoresCommand { get; }
+        public ICommand IniciarOPCommand { get; }
 
         public HomeViewModel()
         {
-            ModelosCommand = new Command(OnModelosClicked);
-            ColoresCommand = new Command(OnColoresClicked);
+            ModelosCommand = new Command(OnModelosClicked, (x) => EsAdministrador);
+            ColoresCommand = new Command(OnColoresClicked, (x) => EsAdministrador);
+            IniciarOPCommand = new Command(OnIniciarOPClicked, (x) => EsSupervisorLinea);
         }
 
 
@@ -21,9 +23,14 @@ namespace ControlCalidad.ViewModels
             await Shell.Current.GoToAsync($"//{nameof(ModelosPage)}");
         }
 
-        private async void OnColoresClicked(object obj)
+        protected async void OnColoresClicked(object obj)
         {
             await Shell.Current.GoToAsync($"//{nameof(ColoresPage)}");
+        }
+
+        protected async void OnIniciarOPClicked(object obj)
+        {
+            await Shell.Current.GoToAsync($"//{nameof(IniciarOrdenProduccionPage)}");
         }
 
     }
