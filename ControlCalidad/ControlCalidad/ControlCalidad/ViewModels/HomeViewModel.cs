@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace ControlCalidad.ViewModels
 {
-    public class HomeViewModel
+    public class HomeViewModel : BaseViewModel
     {
         public ICommand ModelosCommand { get; }
         public ICommand ColoresCommand { get; }

@@ -2,30 +2,46 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ControlCalidad.Views.HomePage">
-    <Grid>
+    <Grid BackgroundColor="{StaticResource MainBackground}" Padding="30,24,30,24">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackLayout Grid.ColumnSpan="2" Orientation="Horizontal" BackgroundColor="{StaticResource MainBackground}" Padding="30,24,30,24">
-            <Button HorizontalOptions="FillAndExpand" Grid.Column="0" Text="Colores"
-                    Margin="0,10,0,0" 
-                    Command="{Binding ColoresCommand}"
-                    BackgroundColor="{StaticResource Primary}"
-                    TextColor="White"    
-                    FontSize="50"
-                    CornerRadius="15"/>
-
-            <Button HorizontalOptions="FillAndExpand" Grid.Column="1" Text="Modelos"
-                    Margin="0,10,0,0" 
-                    Command="{Binding ModelosCommand}"
-                    BackgroundColor="{StaticResource Primary}"
-                    TextColor="White" 
-                    FontSize="50"
-                    CornerRadius="15"/>
-        </StackLayout>
+        <Button HorizontalOptions="FillAndExpand" Grid.Column="0" Text="Colores"
+                IsVisible="{Binding EsAdministrador}"
+                Margin="0,10,0,0" 
+                Command="{Binding ColoresCommand}"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"    
+                FontSize="50"
+                CornerRadius="15"/>
+        <Button HorizontalOptions="FillAndExpand" Grid.Column="1" Text="Modelos"
+                IsVisible="{Binding EsAdministrador}"
+                Margin="0,10,0,0" 
+                Command="{Binding ModelosCommand}"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White" 
+                FontSize="50"
+                CornerRadius="15"/>
+        
+        <Button HorizontalOptions="FillAndExpand" Grid.Column="0" Text="Iniciar"
+                IsVisible="{Binding EsSupervisorLinea}"
+                Margin="0,10,0,0" 
+                Command="{Binding IniciarOPCommand}"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"    
+                FontSize="50"
+                CornerRadius="15"/>
+        <Button HorizontalOptions="FillAndExpand" Grid.Column="1" Text="Gestionar"
+                Margin="0,10,0,0" 
+                IsVisible="{Binding EsSupervisorLinea}"
+                Command="{Binding GestionarOPCommand}"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White" 
+                FontSize="45"
+                CornerRadius="15"/>
     </Grid>
 </ContentPage>

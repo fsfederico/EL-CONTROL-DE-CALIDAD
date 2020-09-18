@@ -15,6 +15,15 @@ namespace ControlCalidad.Datos
                 Email = "admin",
                 Documento = "1",
                 Rol = Dominio.Rol.Administrador
+            },
+            new Usuario{
+                Id = 2,
+                Apellido= "LINEA",
+                Nombre = "LINEA",
+                CodigoUsuario = "LINEA",
+                Email = "LINEA",
+                Documento = "2",
+                Rol = Dominio.Rol.SupervisorLinea
             }
         };
 
