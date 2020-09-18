@@ -9,11 +9,15 @@ namespace ControlCalidad.Views
     {
         public ModelosPage()
         {
-            var coloresService = DependencyService.Resolve<IModeloService>();
             InitializeComponent();
-            BindingContext = new ModelosViewModel(coloresService);
         }
 
+        protected override void OnAppearing()
+        {
+            var coloresService = DependencyService.Resolve<IModeloService>();
+            BindingContext = new ModelosViewModel(coloresService); 
+            base.OnAppearing();
+        }
         private void EnabledEditCommand(object sender, EventArgs e)
         {
             Button button = (Button)sender;

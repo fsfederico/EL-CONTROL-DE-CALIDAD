@@ -9,9 +9,14 @@ namespace ControlCalidad.Views
     {
         public ColoresPage()
         {
-            var coloresService = DependencyService.Resolve<IColorService>();
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            var coloresService = DependencyService.Resolve<IColorService>();
             BindingContext = new ColoresViewModel(coloresService);
+            base.OnAppearing();
         }
 
         private void EnabledEditCommand(object sender, EventArgs e)
@@ -26,7 +31,7 @@ namespace ControlCalidad.Views
                 if (item.AutomationId == "btnEditar")
                     item.IsVisible = !item.IsVisible;
                 if (item.AutomationId == "btnCancelar")
-                    item.IsVisible = !item.IsVisible;                
+                    item.IsVisible = !item.IsVisible;
                 if (item.AutomationId == "btnEliminar")
                     item.IsVisible = !item.IsVisible;
                 if (item.AutomationId == "entryDesc")
