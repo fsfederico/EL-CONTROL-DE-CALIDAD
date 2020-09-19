@@ -6,5 +6,10 @@ namespace ControlCalidad.Dominio.Entidades
     {
         public int Id { get; set; }
         public Estado Estado { get; set; }
+
+        public void Eliminar()
+        {
+            this.Estado = Estado.Eliminado;
+        }
     }
 }

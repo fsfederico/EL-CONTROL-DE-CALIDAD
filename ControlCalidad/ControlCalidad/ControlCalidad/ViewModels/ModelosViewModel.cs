@@ -87,7 +87,9 @@ namespace ControlCalidad.Presentacion.ViewModels
 
         private void OnDeleteCommand(object obj)
         {
-            _modelosService.Remove(obj as Modelo);
+            var modelo = obj as Modelo;
+            modelo.Eliminar();
+            _modelosService.Remove(modelo);
             ActualizarListadoModelos();
         }
         #endregion

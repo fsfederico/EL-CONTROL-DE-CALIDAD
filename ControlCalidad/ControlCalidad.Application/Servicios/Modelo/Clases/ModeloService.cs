@@ -36,7 +36,6 @@ namespace ControlCalidad.Aplicacion.Servicios
 
         public void Remove(Modelo item)
         {
-            item.Estado = Dominio.Enums.Estado.Eliminado;
             MockDataStore.Modelos.AddOrUpdate(item);
         }
     }

@@ -20,15 +20,13 @@ namespace ControlCalidad.Presentacion.ViewModels
         private readonly IColorService _colorService;
         private readonly IModeloService _modeloService;
         private readonly ITurnoService _turnoService;
-        private readonly Page _parent;
-        public IniciarOrdenProduccionViewModel(Page parent,
-            ILineaTrabajoService lineaTrabajoService,
+
+        public IniciarOrdenProduccionViewModel(ILineaTrabajoService lineaTrabajoService,
             IOrdenProduccionService ordenProduccionService,
             IColorService colorService,
             IModeloService modeloService,
             ITurnoService turnoService)
         {
-            _parent = parent;
             _lineaTrabajoService = lineaTrabajoService;
             _ordenProduccionService = ordenProduccionService;
             _colorService = colorService;
@@ -169,7 +167,7 @@ namespace ControlCalidad.Presentacion.ViewModels
             }
             else
                 throw new InvalidOperationException();
-            GoHome(_parent);
+            GoHome();
         }
     }
 }

@@ -36,7 +36,6 @@ namespace ControlCalidad.Aplicacion.Servicios
 
         public void Remove(Color color)
         {
-            color.Estado = Dominio.Enums.Estado.Eliminado;
             MockDataStore.Colores.AddOrUpdate(color);
         }
     }

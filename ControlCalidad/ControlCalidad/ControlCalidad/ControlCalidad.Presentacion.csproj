@@ -22,13 +22,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AdministrarOrdenProduccionPage.xaml.cs">
+      <DependentUpon>AdministrarOrdenProduccionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\IniciarOrdenProduccionPage.xaml.cs">
       <DependentUpon>IniciarOrdenProduccionPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\AdministrarOrdenProduccion.xaml">
+    <EmbeddedResource Update="Views\AdministrarOrdenProduccionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ColoresPage.xaml">

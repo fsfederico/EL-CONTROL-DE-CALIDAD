@@ -87,7 +87,9 @@ namespace ControlCalidad.Presentacion.ViewModels
 
         private void OnDeleteCommand(object obj)
         {
-            _coloresService.Remove(obj as Color);
+            var color = obj as Color;
+            color.Eliminar();
+            _coloresService.Remove(color);
             ActualizarListadoColores();
         }
         #endregion

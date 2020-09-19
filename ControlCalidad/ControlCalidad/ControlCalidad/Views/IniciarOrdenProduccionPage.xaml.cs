@@ -23,8 +23,7 @@ namespace ControlCalidad.Views
             var modeloService = DependencyService.Resolve<IModeloService>();
             var turnoService = DependencyService.Resolve<ITurnoService>();
 
-            BindingContext = new IniciarOrdenProduccionViewModel(this,
-                lineaTrabajoService,
+            BindingContext = new IniciarOrdenProduccionViewModel(lineaTrabajoService,
                 ordenProduccionService,
                 colorService,
                 modeloService,

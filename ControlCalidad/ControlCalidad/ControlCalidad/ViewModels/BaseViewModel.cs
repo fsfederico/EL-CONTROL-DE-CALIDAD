@@ -88,7 +88,7 @@ namespace ControlCalidad.ViewModels
             return true;
         }
 
-        protected async void GoHome(Page page)
+        protected async void GoHome()
         {
             await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
         }

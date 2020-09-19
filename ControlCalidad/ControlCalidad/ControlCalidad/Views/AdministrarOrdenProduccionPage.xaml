@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlCalidad.Views.AdministrarOrdenProduccionPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource MainBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label  Grid.Row="0" Grid.ColumnSpan="2" FontSize="40" Text="{Binding OrdenProduccion.Numero, StringFormat='Orden de producción {0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,20,0,0"/>
+            <Button Grid.Row="1" Grid.ColumnSpan="2" CornerRadius="10" Text="Continuar" FontSize="Medium" BackgroundColor="Green" Command="{Binding ContinuarCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" IsVisible="{Binding ContinuarEnabled}" Margin="10,0,15,0"></Button>
+            <Button Grid.Row="1" Grid.Column="0" CornerRadius="10" Text="Pausar" FontSize="Medium" BackgroundColor="OrangeRed" Command="{Binding PausarCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" IsVisible="{Binding PausarEnabled}" Margin="15,0,10,0"></Button>
+            <Button Grid.Row="1" Grid.Column="1" CornerRadius="10" Text="Finalizar" FontSize="Medium" BackgroundColor="DimGray" Command="{Binding FinalizarCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" IsVisible="{Binding PausarEnabled}" Margin="10,0,15,0"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
