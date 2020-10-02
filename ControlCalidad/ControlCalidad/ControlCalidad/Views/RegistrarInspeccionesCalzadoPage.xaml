@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="ControlCalidad.Views.RegistrarInspeccionesCalzadoPage"
+             Title="Informe de reproceso y observados">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource MainBackground}">
+                
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Margin="10,10,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                
+                    <Label FontSize="Medium" Text="{Binding OrdenProduccion.Numero, StringFormat='OP Nº: {0}'}"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Text="{Binding OrdenProduccion.Modelo.Denomimacion, StringFormat='Modelo: {0}'}"></Label>
+                    <Label FontSize="Medium" Grid.Column="2" Text="{Binding OrdenProduccion.Color.Descripcion, StringFormat='Color: {0}'}"></Label>
+                    <Label FontSize="Medium" Grid.Row="1" Text="{Binding OrdenProduccion.LineaTrabajo.NumeroLinea, StringFormat='Linea: {0}'}"></Label>
+                    <Label FontSize="Medium" Grid.Row="1" Grid.Column="1" Text="{Binding Usuario, StringFormat='Realizado por: {0}'}"></Label>
+                    <Label FontSize="Medium" Grid.Row="1" Grid.Column="2" Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='Fecha: {0:g}'}"></Label>
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding DefectosReproceso}"
+                          SeparatorColor="Transparent" SeparatorVisibility="None" Margin="10,10,0,0">
+                        <ListView.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75"/>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="1" Text="Izquierdo" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Small" ></Label>
+                                <Label Grid.Column="2" Text="Derecho" HorizontalTextAlignment="End" FontAttributes="Bold" FontSize="Small" ></Label>
+                            </Grid>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="75"/>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition />
+                                                <ColumnDefinition />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding Defecto.DescripcionDefecto}"
+                                                   FontSize="15"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="CenterAndExpand" />
+                                            <Stepper Grid.Column="1" Grid.ColumnSpan="3"
+                                                     Increment="1"/>
+                                            <Label Grid.Column="2" 
+                                                   FontAttributes="Bold"
+                                                   Text="{Binding CantidadIzquierdo}"
+                                                   VerticalOptions="Center"/>
+                                            <Stepper Grid.Column="3"
+                                                     Increment="1"/>
+                                            <Label Grid.Column="4" 
+                                                   FontAttributes="Bold"
+                                                   Text="{Binding CantidadDerecho}"
+                                                   VerticalOptions="Center"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

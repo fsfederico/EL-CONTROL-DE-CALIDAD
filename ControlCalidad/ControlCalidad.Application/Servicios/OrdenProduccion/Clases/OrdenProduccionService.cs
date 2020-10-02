@@ -2,6 +2,7 @@
 using ControlCalidad.Dominio.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ControlCalidad.Aplicacion.Servicios
 {
@@ -23,14 +24,19 @@ namespace ControlCalidad.Aplicacion.Servicios
             throw new NotImplementedException();
         }
 
+        public List<Defecto> GetAllDefectos()
+        {
+            return MockDataStore.Defectos;
+        }
+
         public OrdenProduccion GetById(int id)
         {
-            throw new NotImplementedException();
+            return MockDataStore.OrdenesProduccion.FirstOrDefault(op => op.Id == id);
         }
 
         public IEnumerable<OrdenProduccion> GetFiltered(Func<OrdenProduccion, bool> filter)
         {
-            throw new NotImplementedException();
+            return MockDataStore.OrdenesProduccion.Where(filter);
         }
 
         public void Remove(OrdenProduccion item)

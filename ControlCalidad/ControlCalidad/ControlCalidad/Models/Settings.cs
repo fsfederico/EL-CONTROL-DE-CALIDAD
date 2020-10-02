@@ -9,6 +9,8 @@ namespace ControlCalidad.Presentacion
         // this is the default static instance you'd use like string text = Settings.Default.SomeSetting;
         public readonly static Settings Default = new Settings();
 
+        public int OrdenProduccion { get; set; }
+
         // add setting properties as you wish
         private Usuario _usuario;
         public Usuario Usuario

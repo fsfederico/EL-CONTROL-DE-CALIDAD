@@ -49,7 +49,7 @@ namespace ControlCalidad.ViewModels
             set
             {
                 _esSupervisorCalidad = value;
-                OnPropertyChanged("EsSupervisorLinea");
+                OnPropertyChanged("EsSupervisorCalidad");
             }
         }
         #endregion

@@ -42,6 +42,23 @@
                 BackgroundColor="{StaticResource Primary}"
                 TextColor="White" 
                 FontSize="45"
+                CornerRadius="15"/>    
+        
+        <Button HorizontalOptions="FillAndExpand" Grid.Column="0" Text="Inspeccionar"
+                IsVisible="{Binding EsSupervisorCalidad}"
+                Margin="0,10,0,0" 
+                Command="{Binding InspeccionarCalzadoCommand}"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"    
+                FontSize="45"
+                CornerRadius="15"/>
+        <Button HorizontalOptions="FillAndExpand" Grid.Column="1" Text="Hermanar"
+                Margin="0,10,0,0" 
+                IsVisible="{Binding EsSupervisorCalidad}"
+                Command="{Binding HermanarParesCommand}"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White" 
+                FontSize="45"
                 CornerRadius="15"/>
     </Grid>
 </ContentPage>

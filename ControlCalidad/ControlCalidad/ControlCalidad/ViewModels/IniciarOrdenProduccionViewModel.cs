@@ -1,5 +1,6 @@
 ﻿using ControlCalidad.Aplicacion.Servicios;
 using ControlCalidad.Aplicacion.Servicios.Turno.Interface;
+using ControlCalidad.Datos;
 using ControlCalidad.Dominio;
 using ControlCalidad.Dominio.Entidades;
 using ControlCalidad.ViewModels;
@@ -167,6 +168,7 @@ namespace ControlCalidad.Presentacion.ViewModels
             }
             else
                 throw new InvalidOperationException();
+            //Settings.Default.Usuario = MockDataStore.Usuarios[2];
             GoHome();
         }
     }

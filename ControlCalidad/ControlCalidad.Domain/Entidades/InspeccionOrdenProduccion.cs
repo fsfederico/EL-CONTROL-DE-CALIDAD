@@ -7,7 +7,7 @@ namespace ControlCalidad.Dominio.Entidades
     {
         public int CantidadPrimera { get; set; }
         public DateTime Fecha { get; set; }
-        public DateTime Hora { get; set; }
+        public TimeSpan Hora { get; set; }
 
         public virtual OrdenProduccion OrdenProduccion { get; set; }
         public virtual Usuario Supervisor { get; set; }

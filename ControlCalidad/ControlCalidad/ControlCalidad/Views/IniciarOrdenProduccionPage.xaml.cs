@@ -3,11 +3,9 @@ using ControlCalidad.Aplicacion.Servicios.Turno.Interface;
 using ControlCalidad.Presentacion.ViewModels;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ControlCalidad.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IniciarOrdenProduccionPage : ContentPage
     {
         public IniciarOrdenProduccionPage()

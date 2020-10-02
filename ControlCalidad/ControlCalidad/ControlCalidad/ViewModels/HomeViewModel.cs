@@ -1,4 +1,5 @@
-﻿using ControlCalidad.Views;
+﻿using ControlCalidad.Dominio.Entidades;
+using ControlCalidad.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -10,13 +11,17 @@ namespace ControlCalidad.ViewModels
         public ICommand ColoresCommand { get; }
         public ICommand IniciarOPCommand { get; }
         public ICommand GestionarOPCommand { get; }
+        public ICommand InspeccionarCalzadoCommand { get; }
+        public ICommand HermanarParesCommand { get; }
 
         public HomeViewModel()
         {
-            ModelosCommand = new Command(OnModelosClicked, (x) => EsAdministrador);
-            ColoresCommand = new Command(OnColoresClicked, (x) => EsAdministrador);
-            IniciarOPCommand = new Command(OnIniciarOPClicked, (x) => EsSupervisorLinea);
-            GestionarOPCommand = new Command(OnGestionarOPClicked, (x) => EsSupervisorLinea);
+            ModelosCommand = new Command(OnModelosClicked);
+            ColoresCommand = new Command(OnColoresClicked);
+            IniciarOPCommand = new Command(OnIniciarOPClicked);
+            GestionarOPCommand = new Command(OnGestionarOPClicked);
+            InspeccionarCalzadoCommand = new Command(OnInspeccionarCalzadoClicked);
+            HermanarParesCommand = new Command(OnHermanarParesClicked);
         }
 
 
@@ -38,6 +43,21 @@ namespace ControlCalidad.ViewModels
         protected async void OnGestionarOPClicked(object obj)
         {
             await Shell.Current.GoToAsync($"//{nameof(AdministrarOrdenProduccionPage)}");
+        }
+
+        protected async void OnInspeccionarCalzadoClicked(object obj)
+        {
+            await Shell.Current.GoToAsync($"//{nameof(InpeccionarCalzadoPage)}");
+        }
+
+        protected async void OnHermanarParesClicked(object obj)
+        {
+            await Shell.Current.GoToAsync($"//{nameof(AdministrarOrdenProduccionPage)}");
+        }
+
+        public void Method()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

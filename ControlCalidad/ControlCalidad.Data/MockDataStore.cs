@@ -17,7 +17,7 @@ namespace ControlCalidad.Datos
                 CodigoUsuario = "admin",
                 Email = "admin",
                 Documento = "1",
-                Rol = Dominio.Rol.Administrador
+                Rol = Rol.Administrador
             },
             new Usuario{
                 Id = 2,
@@ -26,7 +26,16 @@ namespace ControlCalidad.Datos
                 CodigoUsuario = "LINEA",
                 Email = "LINEA",
                 Documento = "2",
-                Rol = Dominio.Rol.SupervisorLinea
+                Rol = Rol.SupervisorLinea
+            },
+            new Usuario{
+                Id = 3,
+                Apellido= "CALIDAD",
+                Nombre = "CALIDAD",
+                CodigoUsuario = "CALIDAD",
+                Email = "CALIDAD",
+                Documento = "3",
+                Rol = Rol.SupervisorCalidad
             }
         };
         #endregion
@@ -116,6 +125,68 @@ namespace ControlCalidad.Datos
                 Fin = new TimeSpan(5,30,0),
                 MinutosPermitidos = 15
             }
+        };
+        #endregion
+
+        #region Defectos
+        public static List<Defecto> Defectos = new List<Defecto>
+        {
+            new Defecto
+            {
+                Id = 1,
+                DescripcionDefecto = "Roto",
+                Estado = Dominio.Enums.Estado.Activo,
+                TipoDefecto = Dominio.Enums.TipoDefecto.Reprocesado
+            },
+            new Defecto
+            {
+                Id = 2,
+                DescripcionDefecto = "Despegado",
+                Estado = Dominio.Enums.Estado.Activo,
+                TipoDefecto = Dominio.Enums.TipoDefecto.Reprocesado
+            },
+            new Defecto
+            {
+                Id = 3,
+                DescripcionDefecto = "Sucio",
+                Estado = Dominio.Enums.Estado.Activo,
+                TipoDefecto = Dominio.Enums.TipoDefecto.Reprocesado
+            },
+            new Defecto
+            {
+                Id = 4,
+                DescripcionDefecto = "Raspado",
+                Estado = Dominio.Enums.Estado.Activo,
+                TipoDefecto = Dominio.Enums.TipoDefecto.Reprocesado
+            },
+            new Defecto
+            {
+                Id = 5,
+                DescripcionDefecto = "Roto",
+                Estado = Dominio.Enums.Estado.Activo,
+                TipoDefecto = Dominio.Enums.TipoDefecto.Observado
+            },
+            new Defecto
+            {
+                Id = 6,
+                DescripcionDefecto = "Cortado",
+                Estado = Dominio.Enums.Estado.Activo,
+                TipoDefecto = Dominio.Enums.TipoDefecto.Observado
+            },
+            new Defecto
+            {
+                Id = 7,
+                DescripcionDefecto = "Sin detalles",
+                Estado = Dominio.Enums.Estado.Activo,
+                TipoDefecto = Dominio.Enums.TipoDefecto.Observado
+            },
+            new Defecto
+            {
+                Id = 8,
+                DescripcionDefecto = "Descolorido",
+                Estado = Dominio.Enums.Estado.Activo,
+                TipoDefecto = Dominio.Enums.TipoDefecto.Observado
+            },
         };
         #endregion
         public static void AddOrUpdate<T>(this List<T> list, T item) where T : EntityBase

@@ -21,7 +21,7 @@ namespace ControlCalidad.Dominio.Entidades
         public virtual List<OrdenProduccion> OrdenesProduccion { get; set; }
         public virtual List<LineaTrabajo> LineasTrabajo { get; set; }
         public bool EstaAsignado => OrdenesProduccion.Any(op => op.Estado == Enums.Estado.Activo && op.EstadoOrdenProduccion != Enums.EstadoOrdenProduccion.Finalizado);
-        public OrdenProduccion LineaOrdenProduccionActual => LineasTrabajo.Any() ? LineasTrabajo.FirstOrDefault(lt => lt.OrdenesProduccion.Any(op => op.Disponible))?
-                                                                     .OrdenesProduccion.FirstOrDefault(op => op.Disponible) ?? null : null;
+        public OrdenProduccion LineaOrdenProduccionActual => LineasTrabajo.Any() ? LineasTrabajo.FirstOrDefault(lt => lt.OrdenesProduccion.Any(op => op.EnEjecucion))?
+                                                                     .OrdenesProduccion.FirstOrDefault(op => op.EnEjecucion) ?? null : null;
     }
 }

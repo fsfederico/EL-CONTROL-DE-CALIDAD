@@ -85,6 +85,8 @@
         <ShellContent Route="ColoresPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:ColoresPage}" />
         <ShellContent Route="IniciarOrdenProduccionPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:IniciarOrdenProduccionPage}" />
         <ShellContent Route="AdministrarOrdenProduccionPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:AdministrarOrdenProduccionPage}" />
+        <ShellContent Route="InpeccionarCalzadoPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:InpeccionarCalzadoPage}" />
+        <ShellContent Route="RegistrarInspeccionesCalzadoPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:RegistrarInspeccionesCalzadoPage}" />
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
