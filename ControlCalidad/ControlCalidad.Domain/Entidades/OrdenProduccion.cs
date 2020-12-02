@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ControlCalidad.Dominio.Entidades
+namespace ControlCalidad.Dominio
 {
     public class OrdenProduccion : EntityBase
     {

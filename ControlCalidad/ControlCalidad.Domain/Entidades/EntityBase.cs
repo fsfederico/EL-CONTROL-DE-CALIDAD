@@ -1,6 +1,6 @@
 ﻿using ControlCalidad.Dominio.Enums;
 
-namespace ControlCalidad.Dominio.Entidades
+namespace ControlCalidad.Dominio
 {
     public abstract class EntityBase
     {

@@ -1,8 +1,6 @@
 ﻿using ControlCalidad.Aplicacion.Servicios;
 using ControlCalidad.Aplicacion.Servicios.Turno.Interface;
-using ControlCalidad.Datos;
 using ControlCalidad.Dominio;
-using ControlCalidad.Dominio.Entidades;
 using ControlCalidad.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -10,7 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Color = ControlCalidad.Dominio.Entidades.Color;
+using Color = ControlCalidad.Dominio.Color;
 
 namespace ControlCalidad.Presentacion.ViewModels
 {

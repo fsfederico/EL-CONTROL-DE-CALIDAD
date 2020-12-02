@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCalidad.Android", "ControlCalidad\ControlCalidad.Android\ControlCalidad.Android.csproj", "{E0F20302-FA44-45DA-A4EF-162EF8F3D33B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCalidad.Presentacion", "ControlCalidad\ControlCalidad\ControlCalidad.Presentacion.csproj", "{6D055287-FF52-4173-BA05-09F7E19C0604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlCalidad.Presentacion", "ControlCalidad\ControlCalidad\ControlCalidad.Presentacion.csproj", "{6D055287-FF52-4173-BA05-09F7E19C0604}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Infraestructura", "00.Infraestructura", "{5CB46F33-1F26-4895-811A-73D71A84EC92}"
 EndProject
@@ -15,17 +15,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Aplicacion", "02.Aplicac
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Presentacion", "03.Presentacion", "{A5FE0B1A-FD11-429B-832A-87BCB81371AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCalidad.Aplicacion", "ControlCalidad.Application\ControlCalidad.Aplicacion.csproj", "{0029621C-6652-4478-878B-0406D26815B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlCalidad.Aplicacion", "ControlCalidad.Application\ControlCalidad.Aplicacion.csproj", "{0029621C-6652-4478-878B-0406D26815B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCalidad.Dominio", "ControlCalidad.Domain\ControlCalidad.Dominio.csproj", "{9B84A752-F6D8-4D50-B472-A8DA084E4A2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlCalidad.Dominio", "ControlCalidad.Domain\ControlCalidad.Dominio.csproj", "{9B84A752-F6D8-4D50-B472-A8DA084E4A2E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Datos", "Datos", "{D2541795-F75B-43B8-8968-F630D61B46D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transversal", "Transversal", "{DC019BBD-BAAE-4257-9B0D-2435B696C6EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCalidad.Transversal", "ControlCalidad.CrossCutting\ControlCalidad.Transversal.csproj", "{9F407FCA-BCC2-4817-909F-FBC3506DF449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlCalidad.Transversal", "ControlCalidad.CrossCutting\ControlCalidad.Transversal.csproj", "{9F407FCA-BCC2-4817-909F-FBC3506DF449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCalidad.Datos", "ControlCalidad.Data\ControlCalidad.Datos.csproj", "{EFDE441C-664B-4304-A91E-A87BDBDB356F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlCalidad.Datos", "ControlCalidad.Data\ControlCalidad.Datos.csproj", "{EFDE441C-664B-4304-A91E-A87BDBDB356F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCalidad.Dominio.Test", "ControlCalidad.Dominio.Test\ControlCalidad.Dominio.Test.csproj", "{956A8D06-B525-4547-B03E-6735295CA900}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{EFDE441C-664B-4304-A91E-A87BDBDB356F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFDE441C-664B-4304-A91E-A87BDBDB356F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFDE441C-664B-4304-A91E-A87BDBDB356F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956A8D06-B525-4547-B03E-6735295CA900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956A8D06-B525-4547-B03E-6735295CA900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956A8D06-B525-4547-B03E-6735295CA900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956A8D06-B525-4547-B03E-6735295CA900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{DC019BBD-BAAE-4257-9B0D-2435B696C6EF} = {5CB46F33-1F26-4895-811A-73D71A84EC92}
 		{9F407FCA-BCC2-4817-909F-FBC3506DF449} = {DC019BBD-BAAE-4257-9B0D-2435B696C6EF}
 		{EFDE441C-664B-4304-A91E-A87BDBDB356F} = {D2541795-F75B-43B8-8968-F630D61B46D8}
+		{956A8D06-B525-4547-B03E-6735295CA900} = {441781DD-952D-4254-A1C9-66AB5684885D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FB919F9-0DBE-43E7-8681-6D844191FEFE}

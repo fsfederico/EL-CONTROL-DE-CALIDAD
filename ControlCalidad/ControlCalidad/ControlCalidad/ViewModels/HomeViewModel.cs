@@ -1,5 +1,4 @@
-﻿using ControlCalidad.Dominio.Entidades;
-using ControlCalidad.Views;
+﻿using ControlCalidad.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
 

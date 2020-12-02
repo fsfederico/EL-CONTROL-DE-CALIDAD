@@ -1,5 +1,5 @@
 ﻿using ControlCalidad.Aplicacion.Servicios;
-using ControlCalidad.Dominio.Entidades;
+using ControlCalidad.Dominio;
 using ControlCalidad.ViewModels;
 using System.Windows.Input;
 using Xamarin.Forms;

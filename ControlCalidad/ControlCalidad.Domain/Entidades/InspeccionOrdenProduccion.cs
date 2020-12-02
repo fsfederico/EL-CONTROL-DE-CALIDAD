@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ControlCalidad.Dominio.Entidades
+namespace ControlCalidad.Dominio
 {
     public class InspeccionOrdenProduccion : EntityBase
     {

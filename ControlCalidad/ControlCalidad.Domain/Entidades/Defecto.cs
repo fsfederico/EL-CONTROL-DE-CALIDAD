@@ -1,7 +1,7 @@
 ﻿using ControlCalidad.Dominio.Enums;
 using System.Collections.Generic;
 
-namespace ControlCalidad.Dominio.Entidades
+namespace ControlCalidad.Dominio
 {
     public class Defecto : EntityBase
     {
