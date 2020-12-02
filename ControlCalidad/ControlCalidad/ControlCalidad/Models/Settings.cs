@@ -1,5 +1,4 @@
 ﻿using ControlCalidad.Dominio;
-using ControlCalidad.Dominio.Entidades;
 using System.ComponentModel;
 
 namespace ControlCalidad.Presentacion

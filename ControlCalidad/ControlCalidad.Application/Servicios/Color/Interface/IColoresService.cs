@@ -1,4 +1,4 @@
-﻿using ControlCalidad.Dominio.Entidades;
+﻿using ControlCalidad.Dominio;
 
 namespace ControlCalidad.Aplicacion.Servicios
 {

@@ -1,5 +1,5 @@
 ﻿using ControlCalidad.Datos;
-using ControlCalidad.Dominio.Entidades;
+using ControlCalidad.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;

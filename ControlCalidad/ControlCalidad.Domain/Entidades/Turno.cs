@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ControlCalidad.Dominio.Entidades
+namespace ControlCalidad.Dominio
 {
     public class Turno : EntityBase
     {

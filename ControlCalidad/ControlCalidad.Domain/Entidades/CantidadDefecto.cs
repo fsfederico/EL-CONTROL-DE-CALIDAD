@@ -1,4 +1,4 @@
-﻿namespace ControlCalidad.Dominio.Entidades
+﻿namespace ControlCalidad.Dominio
 {
     public class CantidadDefecto : EntityBase
     {

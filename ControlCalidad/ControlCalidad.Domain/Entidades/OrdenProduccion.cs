@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ControlCalidad.Dominio.Entidades
+namespace ControlCalidad.Dominio
 {
     public class OrdenProduccion : EntityBase
     {
@@ -59,7 +59,7 @@ namespace ControlCalidad.Dominio.Entidades
 
         public void Continuar()
         {
-            EstadoOrdenProduccion = EstadoOrdenProduccion.EnProgreso;
+            EstadoOrdenProduccion = EstadoOrdenProduccion.Finalizado == EstadoOrdenProduccion ? EstadoOrdenProduccion : EstadoOrdenProduccion.EnProgreso;
         }
 
         public void Pausar()

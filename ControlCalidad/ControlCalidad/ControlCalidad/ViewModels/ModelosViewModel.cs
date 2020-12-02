@@ -1,6 +1,6 @@
 ﻿using ControlCalidad.Aplicacion.Servicios;
 using ControlCalidad.Datos;
-using ControlCalidad.Dominio.Entidades;
+using ControlCalidad.Dominio;
 using ControlCalidad.ViewModels;
 using System.Collections.ObjectModel;
 using System.Linq;
