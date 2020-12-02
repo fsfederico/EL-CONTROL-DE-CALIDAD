@@ -59,7 +59,7 @@ namespace ControlCalidad.Dominio
 
         public void Continuar()
         {
-            EstadoOrdenProduccion = EstadoOrdenProduccion.EnProgreso;
+            EstadoOrdenProduccion = EstadoOrdenProduccion.Finalizado == EstadoOrdenProduccion ? EstadoOrdenProduccion : EstadoOrdenProduccion.EnProgreso;
         }
 
         public void Pausar()
