@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ControlCalidad.Dominio.Test
 {
-    public class Tests
+    public class LineaTrabajoTest
     {
         [SetUp]
         public void Setup()
