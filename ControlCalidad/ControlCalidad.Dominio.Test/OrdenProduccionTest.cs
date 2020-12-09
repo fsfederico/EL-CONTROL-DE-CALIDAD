@@ -36,5 +36,19 @@ namespace ControlCalidad.Dominio.Test
             //Etapa de Comprobacion
             Assert.AreEqual(ordenProduccion.EstadoOrdenProduccion, Enums.EstadoOrdenProduccion.Finalizado);
         }
+
+        [Test]
+        public void Prueba_Pausar_Orden_Produccion_Finalizada()
+        {
+            //Etapa de Preparacion
+            var ordenProduccion = new OrdenProduccion
+            {
+                EstadoOrdenProduccion = Enums.EstadoOrdenProduccion.Finalizado
+            };
+            //Etapa de Ejecucion
+            ordenProduccion.Pausar();
+            //Etapa de Comprobacion
+            Assert.AreEqual(ordenProduccion.EstadoOrdenProduccion, Enums.EstadoOrdenProduccion.Finalizado);
+        }
     }
 }
