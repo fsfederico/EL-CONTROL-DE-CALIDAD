@@ -64,7 +64,7 @@ namespace ControlCalidad.Dominio
 
         public void Pausar()
         {
-            EstadoOrdenProduccion = EstadoOrdenProduccion.Pausado;
+            EstadoOrdenProduccion = EstadoOrdenProduccion.Finalizado == EstadoOrdenProduccion ? EstadoOrdenProduccion : EstadoOrdenProduccion.Pausado;
         }
     }
 }
