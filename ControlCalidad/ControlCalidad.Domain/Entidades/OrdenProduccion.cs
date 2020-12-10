@@ -1,4 +1,5 @@
 ﻿using ControlCalidad.Dominio.Enums;
+using ControlCalidad.Transversal.Extensiones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,32 +25,38 @@ namespace ControlCalidad.Dominio
         public bool EnEjecucion => EstadoOrdenProduccion == EstadoOrdenProduccion.EnProgreso || EstadoOrdenProduccion == EstadoOrdenProduccion.Pausado;
         public bool DisponibleInspeccion => EstadoOrdenProduccion == EstadoOrdenProduccion.EnProgreso && !InspeccionesOrdenProduccion.Any();
 
-        public void IniciarNuevaIspeccion(List<Defecto> defectosReproceso, List<Defecto> defectosObservados, Usuario usuario)
+        public void IniciarNuevaIspeccion(List<Defecto> defectosReproceso, List<Defecto> defectosObservados, Usuario usuario, TimeSpan? hora = null)
         {
             var inspeccion = new InspeccionOrdenProduccion
             {
                 OrdenProduccion = this,
                 Supervisor = usuario,
-                Hora = DateTime.Now.TimeOfDay - new TimeSpan(0, DateTime.Now.TimeOfDay.Minutes, DateTime.Now.TimeOfDay.Seconds)
+                Fecha = DateTime.Now.Date,
+                Hora = hora?.GetTime() ?? DateTime.Now.TimeOfDay.GetTime()
             };
 
-            List<CantidadDefecto> cantidadDefectos = new List<CantidadDefecto>();
-            cantidadDefectos.AddRange(defectosReproceso.Select(d => new CantidadDefecto
+            inspeccion.CantidadesDefecto.AddRange(defectosReproceso.Select(d => new CantidadDefecto
             {
                 Defecto = d,
                 InspeccionOrdenProduccion = inspeccion,
                 CantidadIzquierdo = 0,
                 CantidadDerecho = 0
             }));
-            cantidadDefectos.AddRange(defectosObservados.Select(d => new CantidadDefecto
+
+            inspeccion.CantidadesDefecto.AddRange(defectosObservados.Select(d => new CantidadDefecto
             {
                 Defecto = d,
                 InspeccionOrdenProduccion = inspeccion,
                 CantidadIzquierdo = 0,
                 CantidadDerecho = 0
             }));
-            inspeccion.CantidadesDefecto = cantidadDefectos;
+
             this.InspeccionesOrdenProduccion.Add(inspeccion);
+        }
+
+        public bool ExisteInspeccion(TimeSpan hora)
+        {
+            return this.InspeccionesOrdenProduccion.Any(iop => iop.Fecha == DateTime.Now.Date && iop.Hora == hora.GetTime());
         }
 
         public void Finalizar()
